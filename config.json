@@ -1,0 +1,33 @@
+{
+    "device": {
+        "serial": "emulator-5554",
+        "adb_path": "adb",
+        "screenshot_delay": 1.5
+    },
+    "features": {
+        "daily_missions": true,
+        "shop": false,
+        "summons": false,
+        "part_time_jobs": false,
+        "workshop": false,
+        "card_game": false,
+        "guild": false
+    },
+    "shop": {
+        "buy_with_silver_bells": false,
+        "buy_with_golden_bells": false,
+        "max_golden_bells_spend": 0
+    },
+    "summons": {
+        "daily_free_only": true
+    },
+    "timing": {
+        "action_delay": 1.0,
+        "long_delay": 3.0,
+        "tap_duration": 100
+    },
+    "template_threshold": 0.8,
+    "daily_missions": {
+        "hard_mode_stage": ""
+    }
+}
