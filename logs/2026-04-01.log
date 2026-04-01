@@ -141,3 +141,55 @@ cv2.error: OpenCV(4.13.0) D:\a\opencv-python\opencv-python\opencv\modules\imgpro
 2026-04-01 01:57:36,751 [INFO] bot: === Daily Missions: routine complete ===
 2026-04-01 01:57:36,752 [INFO] bot: All tasks complete.
 2026-04-01 01:58:44,251 [INFO] bot: Bot stopped.
+2026-04-01 01:58:50,123 [INFO] adb: ADB server started
+2026-04-01 01:58:54,091 [INFO] adb: Connected to emulator-5554
+2026-04-01 01:58:56,116 [INFO] bot: Bot started.
+2026-04-01 01:58:56,169 [INFO] bot: Game not running — launching...
+2026-04-01 01:58:56,348 [INFO] adb: Game launched
+2026-04-01 01:59:01,353 [INFO] bot: --- Running: DailyMissionsAutomation ---
+2026-04-01 01:59:01,353 [INFO] DailyMissionsAutomation: === Daily Missions: starting full routine ===
+2026-04-01 01:59:01,354 [INFO] bot: === Daily Missions: starting full routine ===
+2026-04-01 01:59:01,354 [INFO] DailyMissionsAutomation: [1/9] Checking if dailies already done...
+2026-04-01 01:59:01,355 [INFO] bot: [1/9] Checking if dailies already done...
+2026-04-01 01:59:02,271 [INFO] DailyMissionsAutomation:   Mission button not found — assuming not done
+2026-04-01 01:59:02,271 [INFO] bot:   Mission button not found — assuming not done
+2026-04-01 01:59:02,271 [INFO] DailyMissionsAutomation: [2/9] Sausage Bro event
+2026-04-01 01:59:02,271 [INFO] bot: [2/9] Sausage Bro event
+2026-04-01 01:59:03,749 [DEBUG] adb: Tap (990, 437)
+2026-04-01 01:59:08,442 [INFO] DailyMissionsAutomation:   Sausage Bro entry not found — skipping
+2026-04-01 01:59:08,442 [INFO] bot:   Sausage Bro entry not found — skipping
+2026-04-01 01:59:09,893 [INFO] bot: Bot stopped.
+2026-04-01 01:59:09,976 [INFO] DailyMissionsAutomation: === Daily Missions: routine complete ===
+2026-04-01 01:59:09,977 [INFO] bot: === Daily Missions: routine complete ===
+2026-04-01 01:59:09,977 [INFO] bot: All tasks complete.
+2026-04-01 02:04:49,502 [INFO] adb: Connected to emulator-5554
+2026-04-01 02:04:53,105 [INFO] bot: Bot started.
+2026-04-01 02:04:53,166 [INFO] bot: Game not running — launching...
+2026-04-01 02:04:53,457 [INFO] adb: Game launched
+2026-04-01 02:04:58,457 [INFO] bot: --- Running: DailyMissionsAutomation ---
+2026-04-01 02:04:58,457 [INFO] DailyMissionsAutomation: === Daily Missions: starting full routine ===
+2026-04-01 02:04:58,458 [INFO] bot: === Daily Missions: starting full routine ===
+2026-04-01 02:04:58,458 [INFO] DailyMissionsAutomation: [1/9] Checking if dailies already done...
+2026-04-01 02:04:58,458 [INFO] bot: [1/9] Checking if dailies already done...
+2026-04-01 02:05:00,026 [DEBUG] adb: Tap (992, 577)
+2026-04-01 02:05:04,933 [INFO] DailyMissionsAutomation:   Max activity indicator found — dailies complete
+2026-04-01 02:05:04,933 [INFO] bot:   Max activity indicator found — dailies complete
+2026-04-01 02:05:20,017 [INFO] bot: Bot stopped.
+2026-04-01 02:05:21,323 [INFO] DailyMissionsAutomation: Daily Missions: already completed today — skipping routine
+2026-04-01 02:05:21,324 [INFO] bot: Daily Missions: already completed today — skipping routine
+2026-04-01 02:05:21,324 [INFO] bot: All tasks complete.
+2026-04-01 02:07:52,916 [INFO] bot: Bot started.
+2026-04-01 02:07:52,961 [INFO] bot: Game not running — launching...
+2026-04-01 02:07:53,089 [INFO] adb: Game launched
+2026-04-01 02:07:58,090 [INFO] bot: --- Running: DailyMissionsAutomation ---
+2026-04-01 02:07:58,090 [INFO] DailyMissionsAutomation: === Daily Missions: starting full routine ===
+2026-04-01 02:07:58,091 [INFO] bot: === Daily Missions: starting full routine ===
+2026-04-01 02:07:58,097 [INFO] DailyMissionsAutomation: [1/9] Checking if dailies already done...
+2026-04-01 02:07:58,097 [INFO] bot: [1/9] Checking if dailies already done...
+2026-04-01 02:07:59,565 [DEBUG] adb: Tap (992, 577)
+2026-04-01 02:08:04,375 [INFO] DailyMissionsAutomation:   Max activity indicator found — dailies complete
+2026-04-01 02:08:04,376 [INFO] bot:   Max activity indicator found — dailies complete
+2026-04-01 02:08:07,572 [INFO] DailyMissionsAutomation: Daily Missions: already completed today — skipping routine
+2026-04-01 02:08:07,573 [INFO] bot: Daily Missions: already completed today — skipping routine
+2026-04-01 02:08:07,573 [INFO] bot: All tasks complete.
+2026-04-01 02:09:45,010 [INFO] bot: Bot stopped.
