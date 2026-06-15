@@ -4,13 +4,13 @@
   "launch_wait_seconds": 0,
   "package_keywords": ["xxlwoofia", "woofia", "xxl"],
   "daily_mission": {
-    "hard_mode_stage": "8-4",
+    "hard_mode_stage": "1-1",
     "use_stamina_items": false,
     "use_small_stamina_items": false,
     "use_big_stamina_items": false,
     "max_stamina_restore": 60,
     "stamina_item_order": [10, 60],
     "ocr_language": "eng+chi_tra+chi_sim",
-    "tesseract_cmd": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+    "tesseract_cmd": ""
   }
 }

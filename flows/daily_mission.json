@@ -1,0 +1,504 @@
+{
+  "name": "daily_mission",
+  "description": "Optimized daily routine for xxlwoofia. Most actions use image templates because the game is Unity-rendered; chapter and level selection use OCR.",
+  "steps": [
+    {
+      "label": "Wait after app launch",
+      "action": "wait",
+      "seconds": 10
+    },
+    {
+      "label": "Tap start screen",
+      "action": "tap_ocr",
+      "contains": "tap to start",
+      "lang": "eng",
+      "confidence": 25,
+      "timeout_seconds": 5,
+      "after_seconds": 3
+    },
+    {
+      "label": "Close startup popups",
+      "action": "repeat",
+      "times": 6,
+      "delay_seconds": 0.8,
+      "steps": [
+        {
+          "label": "Close popup if visible",
+          "action": "tap_ocr",
+          "contains": "關閉",
+          "lang": "{ocr_language}",
+          "confidence": 25,
+          "timeout_seconds": 1,
+          "optional": true,
+          "after_seconds": 1
+        }
+      ]
+    },
+    {
+      "label": "Wait for home screen",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 60,
+      "threshold": 0.7
+    },
+    {
+      "label": "Expand sidebar if retracted",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/expandBtn.png",
+      "optional": true,
+      "timeout_seconds": 2,
+      "threshold": 0.7
+    },
+    {
+      "label": "Open missions",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/missionBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.85
+    },
+    {
+      "label": "Stop if daily mission already complete",
+      "action": "stop_if_image",
+      "template": "assets/templates/daily_missions/dailyDone.png",
+      "timeout_seconds": 1,
+      "threshold": 0.85,
+      "message": "Daily missions already look complete; stopped before spending resources."
+    },
+    {
+      "label": "Return to home page",
+      "action": "press",
+      "key": "BACK",
+      "after_seconds": 1
+    },
+    {
+      "label": "Confirm home page",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 20,
+      "threshold": 0.7
+    },
+    {
+      "label": "Free gacha: open summons",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/summonBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Free gacha: check silver bell banner",
+      "action": "if_image",
+      "template": "assets/templates/gacha/gachaSilverBanner.png",
+      "timeout_seconds": 6,
+      "threshold": 0.7,
+      "then": [
+        {
+          "label": "Free gacha: check daily first pull",
+          "action": "if_image",
+          "template": "assets/templates/gacha/gachaFree.png",
+          "timeout_seconds": 4,
+          "threshold": 0.7,
+          "then": [
+            {
+              "label": "Free gacha: pull free",
+              "action": "tap_image",
+              "template": "assets/templates/gacha/gachaFree.png",
+              "timeout_seconds": 4,
+              "threshold": 0.7,
+              "after_seconds": 8
+            },
+            {
+              "label": "Free gacha: skip animation",
+              "action": "tap_image",
+              "template": "assets/templates/gacha/gachaSkip.png",
+              "optional": true,
+              "timeout_seconds": 5,
+              "threshold": 0.7
+            },
+            {
+              "label": "Free gacha: close result",
+              "action": "tap_image",
+              "template": "assets/templates/gacha/gachaClose.png",
+              "optional": true,
+              "timeout_seconds": 6,
+              "threshold": 0.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Return home after free gacha",
+      "action": "press",
+      "key": "BACK",
+      "after_seconds": 1
+    },
+    {
+      "label": "Wait home after free gacha",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 20,
+      "threshold": 0.7
+    },
+    {
+      "label": "Sausage guy: Open",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/sausageBro.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Sausage guy: gamble",
+      "action": "tap_image",
+      "template": "assets/templates/sausageBro/sausageGamble.png",
+      "optional": true,
+      "timeout_seconds": 6,
+      "threshold": 0.7
+    },
+    {
+      "label": "Sausage guy: wait for result",
+      "action": "wait_image",
+      "template": "assets/templates/daily_missions/SausageResult.png",
+      "optional": true,
+      "timeout_seconds": 12,
+      "threshold": 0.7
+    },
+    {
+      "label": "Sausage guy: close result",
+      "action": "tap_ocr",
+      "contains": "\u7372\u5f97\u734e\u52f5",
+      "lang": "{ocr_language}",
+      "confidence": 25,
+      "optional": true,
+      "timeout_seconds": 4,
+      "after_seconds": 1
+    },
+    {
+      "label": "Return home after sausage guy",
+      "action": "press",
+      "key": "BACK",
+      "after_seconds": 1
+    },
+    {
+      "label": "Wait home after sausage guy",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 20,
+      "threshold": 0.7
+    },
+    {
+      "label": "Bond: open page",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/BondBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Bond: collect double tap",
+      "action": "repeat",
+      "times": 2,
+      "delay_seconds": 1,
+      "steps": [
+        {
+          "label": "Bond: collect",
+          "action": "tap_image",
+          "template": "assets/templates/bond/bondFinish.png",
+          "optional": true,
+          "timeout_seconds": 4,
+          "threshold": 0.7
+        }
+      ]
+    },
+    {
+      "label": "Bond: cancel new CG popup",
+      "action": "tap_image",
+      "template": "assets/templates/common/cancelBtn.png",
+      "optional": true,
+      "timeout_seconds": 4,
+      "threshold": 0.7
+    },
+    {
+      "label": "Bond: confirm bond increase popup",
+      "action": "tap_image",
+      "template": "assets/templates/common/confirmBtn.png",
+      "optional": true,
+      "timeout_seconds": 4,
+      "threshold": 0.7
+    },
+    {
+      "label": "Return home after bond",
+      "action": "press",
+      "key": "BACK",
+      "after_seconds": 1
+    },
+    {
+      "label": "Wait home after bond",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 20,
+      "threshold": 0.7
+    },
+    {
+      "label": "Shop: open page",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/shopBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Shop: buy free stuff",
+      "action": "tap_image",
+      "template": "assets/templates/shop/shopFree.png",
+      "optional": true,
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Shop: confirm free buy",
+      "action": "tap_image",
+      "template": "assets/templates/shop/shopBuy.png",
+      "optional": true,
+      "timeout_seconds": 4,
+      "threshold": 0.7
+    },
+    {
+      "label": "Return home after shop",
+      "action": "press",
+      "key": "BACK",
+      "after_seconds": 1
+    },
+    {
+      "label": "Wait home after shop",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 20,
+      "threshold": 0.7
+    },
+    {
+      "label": "Story: click play",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Story: open story mode",
+      "action": "tap_image",
+      "template": "assets/templates/play/storyBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Story: switch to hard mode if currently normal",
+      "action": "if_image",
+      "template": "assets/templates/play/normalDiff.png",
+      "threshold": 0.7,
+      "then": [
+        {
+          "label": "Tap difficulty indicator",
+          "action": "tap_image",
+          "template": "assets/templates/play/diff.png",
+          "timeout_seconds": 4,
+          "threshold": 0.7
+        }
+      ]
+    },
+    {
+      "label": "Story: tap configured chapter",
+      "action": "tap_ocr_scroll",
+      "regex": "^{hard_mode_chapter}$",
+      "lang": "{ocr_language}",
+      "confidence": 45,
+      "attempts": 8,
+      "scan_timeout_seconds": 1.2,
+      "settle_seconds": 0.8,
+      "swipe": {
+        "start_x": 540,
+        "start_y": 1450,
+        "end_x": 540,
+        "end_y": 650,
+        "duration_ms": 450
+      }
+    },
+    {
+      "label": "Story: tap configured hard level",
+      "action": "tap_ocr",
+      "regex": "{hard_mode_level_regex}",
+      "lang": "{ocr_language}",
+      "confidence": 35,
+      "timeout_seconds": 10
+    },
+    {
+      "label": "Story: use skip tickets",
+      "action": "tap_image",
+      "template": "assets/templates/common/skipBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Story: handle stamina popup",
+      "action": "handle_stamina_popup",
+      "popup_template": "assets/templates/daily_missions/stamina_not_enough_popup.png",
+      "small_template": "assets/templates/daily_missions/stamina_item_10.png",
+      "big_template": "assets/templates/daily_missions/stamina_item_60.png",
+      "confirm_template": "assets/templates/common/confirm_button.png",
+      "cancel_template": "assets/templates/common/cancel_button.png",
+      "skip_template": "assets/templates/common/skipBtn.png",
+      "max_restore": 60,
+      "threshold": 0.7
+    },
+    {
+      "label": "Story: run skip if ready",
+      "action": "if_var",
+      "name": "hard_mode_skip_ready",
+      "then": [
+        {
+          "label": "Story: set skip count to max",
+          "action": "tap_image",
+          "template": "assets/templates/play/maxBtn.png",
+          "timeout_seconds": 8,
+          "threshold": 0.7
+        },
+        {
+          "label": "Story: confirm skip count",
+          "action": "tap_image",
+          "template": "assets/templates/common/confirmBtn.png",
+          "timeout_seconds": 6,
+          "threshold": 0.7,
+          "after_seconds": 20
+        },
+        {
+          "label": "Story: finish level clear",
+          "action": "tap_image",
+          "template": "assets/templates/common/finishBtn.png",
+          "timeout_seconds": 20,
+          "threshold": 0.7
+        }
+      ]
+    },
+    {
+      "label": "Return home after story",
+      "action": "repeat",
+      "times": 4,
+      "delay_seconds": 0.8,
+      "steps": [
+        {
+          "label": "Story: back",
+          "action": "press",
+          "key": "BACK",
+          "after_seconds": 0.4
+        }
+      ]
+    },
+    {
+      "label": "Wait home after story",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 25,
+      "threshold": 0.7
+    },
+    {
+      "label": "Part-time: open page",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/ptBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Part-time: collect if done",
+      "action": "tap_image",
+      "template": "assets/templates/common/missionCollect.png",
+      "optional": true,
+      "timeout_seconds": 4,
+      "threshold": 0.7
+    },
+    {
+      "label": "Part-time: one-click assign",
+      "action": "tap_image",
+      "template": "assets/templates/pt/oneclickptBtn.png",
+      "optional": true,
+      "timeout_seconds": 6,
+      "threshold": 0.7
+    },
+    {
+      "label": "Part-time: confirm assign",
+      "action": "tap_image",
+      "template": "assets/templates/pt/ptStart.png",
+      "optional": true,
+      "timeout_seconds": 4,
+      "threshold": 0.7
+    },
+    {
+      "label": "Return home after part-time",
+      "action": "press",
+      "key": "BACK",
+      "after_seconds": 1
+    },
+    {
+      "label": "Wait home after part-time",
+      "action": "wait_image",
+      "template": "assets/templates/homescreen/homescreenplayBtn.png",
+      "timeout_seconds": 20,
+      "threshold": 0.7
+    },
+    {
+      "label": "Final: open missions",
+      "action": "tap_image",
+      "template": "assets/templates/homescreen/missionBtn.png",
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Final: collect daily",
+      "action": "tap_image",
+      "template": "assets/templates/common/missionCollect.png",
+      "optional": true,
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Final: collect daily chest",
+      "action": "tap_image",
+      "template": "assets/templates/daily_missions/chest100.png",
+      "optional": true,
+      "timeout_seconds": 8,
+      "threshold": 0.6
+    },
+    {
+      "label": "Final: close daily chest reward",
+      "action": "tap",
+      "x": 540,
+      "y": 540
+    },
+    {
+      "label": "Final: check weekly tab",
+      "action": "tap_image",
+      "template": "assets/templates/daily_missions/weekly.png",
+      "optional": true,
+      "timeout_seconds": 6,
+      "threshold": 0.7
+    },
+    {
+      "label": "Final: collect weekly if lit",
+      "action": "tap_image",
+      "template": "assets/templates/daily_missions/mission_weekly_collect_all_lit.png",
+      "optional": true,
+      "timeout_seconds": 6,
+      "threshold": 0.7
+    },
+    {
+      "label": "Final: collect weekly chest",
+      "action": "tap_image",
+      "template": "assets/templates/daily_missions/mission_weekly_chest_button.png",
+      "optional": true,
+      "timeout_seconds": 8,
+      "threshold": 0.7
+    },
+    {
+      "label": "Final: close weekly chest reward",
+      "action": "tap",
+      "x": 540,
+      "y": 540
+    }
+  ]
+}
+
