@@ -16,7 +16,7 @@ The daily flow is still being built and tuned. Right now it is focused on:
 - Detecting `tap to start` with OCR.
 - Closing startup popups.
 - Detecting the home screen.
-- Running daily tasks such as free gacha, sausage guy, bond collect, shop free item, hard-mode skip ticket, part-time jobs, daily chests, and weekly rewards.
+- Running daily tasks such as free gacha, sausage bro, bond collect, shop free item, hard-mode skip ticket, part-time jobs, daily chests, and weekly rewards.
 - Handling stamina popups with optional +10 and +60 stamina item usage.
 
 The game is Unity-rendered, so normal Android UI inspection does not expose useful buttons. Most automation depends on image templates under `assets/templates/`.
