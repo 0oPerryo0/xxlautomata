@@ -140,50 +140,58 @@
       "threshold": 0.7
     },
     {
-      "label": "Sausage guy: Open",
-      "action": "tap_image",
+      "label": "Sausage guy: run if available",
+      "action": "if_image",
       "template": "assets/templates/homescreen/sausageBro.png",
-      "timeout_seconds": 8,
-      "threshold": 0.7
-    },
-    {
-      "label": "Sausage guy: gamble",
-      "action": "tap_image",
-      "template": "assets/templates/sausageBro/sausageGamble.png",
-      "optional": true,
-      "timeout_seconds": 6,
-      "threshold": 0.7
-    },
-    {
-      "label": "Sausage guy: wait for result",
-      "action": "wait_image",
-      "template": "assets/templates/daily_missions/SausageResult.png",
-      "optional": true,
-      "timeout_seconds": 12,
-      "threshold": 0.7
-    },
-    {
-      "label": "Sausage guy: close result",
-      "action": "tap_ocr",
-      "contains": "\u7372\u5f97\u734e\u52f5",
-      "lang": "{ocr_language}",
-      "confidence": 25,
-      "optional": true,
-      "timeout_seconds": 4,
-      "after_seconds": 1
-    },
-    {
-      "label": "Return home after sausage guy",
-      "action": "press",
-      "key": "BACK",
-      "after_seconds": 1
-    },
-    {
-      "label": "Wait home after sausage guy",
-      "action": "wait_image",
-      "template": "assets/templates/homescreen/homescreenplayBtn.png",
-      "timeout_seconds": 20,
-      "threshold": 0.7
+      "threshold": 0.7,
+      "then": [
+        {
+          "label": "Sausage guy: Open",
+          "action": "tap_image",
+          "template": "assets/templates/homescreen/sausageBro.png",
+          "timeout_seconds": 8,
+          "threshold": 0.7
+        },
+        {
+          "label": "Sausage guy: gamble",
+          "action": "tap_image",
+          "template": "assets/templates/sausageBro/sausageGamble.png",
+          "optional": true,
+          "timeout_seconds": 6,
+          "threshold": 0.7
+        },
+        {
+          "label": "Sausage guy: wait for result",
+          "action": "wait_image",
+          "template": "assets/templates/sausageBro/sausageResult.png",
+          "optional": true,
+          "timeout_seconds": 10,
+          "threshold": 0.7
+        },
+        {
+          "label": "Sausage guy: close result",
+          "action": "tap_ocr",
+          "contains": "\u7372\u5f97\u734e\u52f5",
+          "lang": "{ocr_language}",
+          "confidence": 25,
+          "optional": true,
+          "timeout_seconds": 4,
+          "after_seconds": 1
+        },
+        {
+          "label": "Return home after sausage guy",
+          "action": "press",
+          "key": "BACK",
+          "after_seconds": 1
+        },
+        {
+          "label": "Wait home after sausage guy",
+          "action": "wait_image",
+          "template": "assets/templates/homescreen/homescreenplayBtn.png",
+          "timeout_seconds": 20,
+          "threshold": 0.7
+        }
+      ]
     },
     {
       "label": "Bond: open page",
@@ -204,9 +212,16 @@
           "template": "assets/templates/bond/bondFinish.png",
           "optional": true,
           "timeout_seconds": 4,
-          "threshold": 0.7
+          "threshold": 0.7,
+          "after_seconds": 3
         }
       ]
+    },
+    {
+      "label": "Bond: dismiss collect screen",
+      "action": "tap",
+      "x": 540,
+      "y": 540
     },
     {
       "label": "Bond: cancel new CG popup",
@@ -258,7 +273,14 @@
       "template": "assets/templates/shop/shopBuy.png",
       "optional": true,
       "timeout_seconds": 4,
-      "threshold": 0.7
+      "threshold": 0.7,
+      "after_seconds": 3
+    },
+    {
+      "label": "Shop: dismiss free buy screen",
+      "action": "tap",
+      "x": 540,
+      "y": 540
     },
     {
       "label": "Return home after shop",
@@ -501,4 +523,3 @@
     }
   ]
 }
-
