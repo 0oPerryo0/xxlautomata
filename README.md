@@ -12,7 +12,9 @@
 
 ## Status
 
-This is still in progress. The daily flow works as a configurable automation script, but it still needs template tuning for each emulator setup. Screen resolution, UI scale, popups, and template crops can all affect recognition.
+This is still heavily in progress and incomplete.
+
+The daily flow works as a configurable automation script, but it still needs template tuning for each emulator setup. Screen resolution, UI scale, popups, and template crops can all affect recognition.
 
 Only the **Traditional Chinese** version of the game is supported right now.
 
